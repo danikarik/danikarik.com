@@ -11,6 +11,7 @@ module.exports = {
     app: ['./src/js/app.js', './src/css/app.css']
   },
   devServer: {
+    host: '0.0.0.0',
     contentBase: './dist',
     hot: true
   },
@@ -26,6 +27,10 @@ module.exports = {
           ],
         }),
       },
+      {
+        test: /\.ico$/,
+        loader: 'file-loader?name=[name].[ext]'
+      }
     ]
   },
   plugins: [
